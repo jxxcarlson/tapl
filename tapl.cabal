@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 31b8e3e97c504699b84bb61237bebf00eb5e16537dde9d6379f3ba166143aa9d
+-- hash: 1591842bc7cb03b3be11d37a6a47c0bb8cabf3e458324f6c9b63c9027e77892e
 
 name:           tapl
 version:        0.1.0.0
@@ -30,6 +30,7 @@ library
       CommandInterpreter
       Lib
       MiniParsec
+      Parser
   other-modules:
       Paths_tapl
   hs-source-dirs:
