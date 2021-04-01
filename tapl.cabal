@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 1591842bc7cb03b3be11d37a6a47c0bb8cabf3e458324f6c9b63c9027e77892e
+-- hash: 0c57fe3db96eccbc05ec1320ae4ec95927185d1a301a4d622371d16194751279
 
 name:           tapl
 version:        0.1.0.0
@@ -28,6 +28,7 @@ source-repository head
 library
   exposed-modules:
       CommandInterpreter
+      Eval
       Lib
       MiniParsec
       Parser

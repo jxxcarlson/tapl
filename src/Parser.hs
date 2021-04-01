@@ -16,9 +16,13 @@ data Term
     deriving Show
 
 
+{-
 
-term = MP.choice "yada" [trueParser, falseParser, zero, succ, pred, isZero, ifExpr]
--- runParser trueParser "true"
+    > runParser term "if true then 0 else succ 0"
+    ("",Right (IfExpr T Zero (Succ Zero)))
+
+-}
+term = MP.choice "yada" [trueParser, falseParser, zero, succ, pred, MP.try isZero, ifExpr]
 trueParser :: Parser Term
 trueParser =  (\_ -> T) <$> string' "true" 
 
@@ -35,7 +39,7 @@ pred :: Parser Term
 pred = (\t -> Pred t) <$> (string' "pred" *> term)
 
 isZero :: Parser Term
-isZero = (\t -> Pred t) <$> (string' "pred" *> term)
+isZero = (\t -> IsZero t) <$> (string' "isZero" *> term)
 
 ifExpr :: Parser Term
 ifExpr  = (\t -> IfExpr t) <$> (string' "if" *> term) <*> (string' "then" *> term) <*> (string' "else" *> term)
